@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Weather Dashboard</title>
+  	<link rel="stylesheet" href="styles.css">
+	  <style>
+			p.serif {
+				font-family: "Times New Roman", Times, serif;
+			}
+			p.sansserif {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			</style>
+</head>
+
+<body>
+		<div class="container">
+			<nav class="navbar">
+				<ul>
+					<li>
+						<a href="test.html">Landing</a>
+					</li>
+						<li>
+						<div class="dropdown">
+						<button onclick="myFunction()" 
+						class="dropbtn">Plots</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="page1.html">Cloudiness</a>
+								<a href="page2.html">Humidity</a>
+								<a href="page3.html">Temperature</a>
+								<a href="page4.html">Wind Speed</a>
+							</div>
+						</div>
+					</li>	
+					<li>
+						<a href="comparisons.html">Comparisons</a>
+					</li>
+					<li>
+						<a href="data.html">Data</a>
+					</li>
+				</ul>
+				<select id="nav-select">
+					<option value="test.html">Landing</option>
+					<option value="page1.html">Cloudiness</option>
+					<option value="page2.html">Humidity</option>
+					<option value="page3.html">Temperature</option>
+					<option value="page4.html">Wind Speed</option>
+					<option value="comparisons.html">Comparisons</option>
+					<option value="data.html">Data</option>
+				</select>
+			</nav>
+		</div>
+	</body>
+  
+  <script>
+  function la(src)
+  {
+    window.location = src;
+  }
+  </script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<body>
+	<section>
+		<h1>City Latitude vs. Humidity</h1>
+	<article>
+	<a target="_blank" href="Humidity.png">
+		<img src="humidity.png" alt="Humidity Map">
+	</a>
+	</article>
+	</section>
+</body>
+
+<p>
+The following plot shows the City Latitute vs. Humidity for the 500+ samples used in the dataset. There appears to be no strong correlation between the humidity of a location and how close it is to the equator. However, as the equator is 
+approached, it seems to be less likely to experience a humidity under 50%.
+</p>
